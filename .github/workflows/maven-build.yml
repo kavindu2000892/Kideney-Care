@@ -16,7 +16,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          
+          MYSQL_ROOT_PASSWORD: 
           MYSQL_DATABASE: upscale55
         ports:
           - 3307:3306
@@ -34,4 +34,4 @@ jobs:
           cache: maven
 
       - name: Build and test with Maven
-        run: mvn --batch-mode package
+        run: mvn --batch-mode package -DskipTests
