@@ -19,7 +19,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  # Allows MySQL to start without a root password
           MYSQL_DATABASE: upscale55
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
-    
+
 
     steps:
       - name: Check out the repository
@@ -32,5 +32,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build and test with Maven
+      - name: Build without tests
         run: mvn --batch-mode package
